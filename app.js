@@ -198,21 +198,75 @@ sec("skills","Skills","Tools I work with.","Technologies, frameworks, and tools 
 
 sec("beyond","Beyond Tech","More than just technical skills.","Skills I continue to develop through teaching, teamwork, academic projects, and collaborative experiences.",`<div class="soft rv">${SOFT.map((s,i)=>`<div><span>${String(i+1).padStart(2,"0")}</span>${s}</div>`).join("")}</div>`)+
 
-sec("education","Education","","",`<div class="grid2">
-<div class="rv">
-<h3 style="margin-top:0">Education</h3>
-<div class="box">
-<strong>${EDU.degree}</strong>
-<div class="meta">${EDU.uni}</div>
-<div>${EDU.status}</div>
-<div class="meta">${EDU.period}</div>
-</div>
-</div>
-<div class="rv">
-<h3 style="margin-top:0">Certifications</h3>
-${CERTS.map(c=>`<div class="box"><strong>${c.name}</strong><div class="meta">${c.org} · ${c.date}${c.id?" · ID: "+c.id:""}</div>${L("Verify credential",c.url)}</div>`).join("")}
-</div>
-</div>`)+
+
+sec(
+    "education",
+    "Education",
+    "Education & Certifications",
+    "My academic background and professional certification.",
+    `
+    <div class="edu-cert-grid">
+
+        <!-- EDUCATION CARD -->
+        <article class="edu-cert-card rv">
+            <div class="edu-cert-label">ACADEMIC BACKGROUND</div>
+
+            <div class="edu-cert-icon"></div>
+
+            <h3>${EDU.degree}</h3>
+
+            <p class="edu-cert-org">${EDU.uni}</p>
+
+            <div class="edu-cert-details">
+                <div>
+                    <span>Academic Status</span>
+                    <strong>${EDU.status}</strong>
+                </div>
+
+                <div>
+                    <span>Study Period</span>
+                    <strong>${EDU.period}</strong>
+                </div>
+            </div>
+        </article>
+
+        <!-- CERTIFICATION CARD -->
+        ${CERTS.map(c => `
+            <article class="edu-cert-card rv">
+                <div class="edu-cert-label">PROFESSIONAL CERTIFICATION</div>
+
+                <div class="edu-cert-icon"></div>
+
+                <h3>${c.name}</h3>
+
+                <p class="edu-cert-org">${c.org}</p>
+
+                <div class="edu-cert-details">
+                    <div>
+                        <span>Issue Date</span>
+                        <strong>${c.date}</strong>
+                    </div>
+
+                    <div>
+                        <span>Expiration Date</span>
+                        <strong>${c.expiration}</strong>
+                    </div>
+
+                    <div>
+                        <span>Validation Number</span>
+                        <strong class="validation-number">${c.validationNumber}</strong>
+                    </div>
+                </div>
+
+                <div class="edu-cert-action">
+                    ${L("Verify Credential", c.url)}
+                </div>
+            </article>
+        `).join("")}
+
+    </div>
+    `
+)+
 
 sec("contact","Get in Touch","Let's build something meaningful.","I'm currently open to internship opportunities, collaborative projects, and connecting with people in the tech industry.",`<div class="cta rv">
 <p class="big">Have an opportunity in mind? Let's talk.</p>

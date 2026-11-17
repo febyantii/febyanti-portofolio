@@ -229,6 +229,23 @@ const ORGS=[
 ];
 const SKILLS={"Programming Languages":["Python","Kotlin","SQL","Java","C#"],"Software & Mobile":["Android Development","Jetpack Compose","Git","GitHub"],"Database":["PostgreSQL","Supabase","Room Database"],"Data Science & ML":["Pandas","NumPy","Scikit-learn","Data Analysis","Data Visualization"],"Cloud & Tools":["AWS","Android Studio","Visual Studio Code","Figma"]};
 const SOFT=["Communication","Team Collaboration","Problem-Solving","Critical Thinking","Adaptability","Time Management","Leadership","Teaching & Knowledge Sharing","Attention to Detail","Continuous Learning"];
-const EDU={degree:"Information Technology",uni:"[INSERT UNIVERSITY NAME]",status:"Currently in 5th Semester",period:"[INSERT START YEAR — EXPECTED GRADUATION]"};
-const CERTS=[{name:"AWS Certified Cloud Practitioner",org:"Amazon Web Services",date:"[INSERT ISSUE DATE]",id:"",url:"[INSERT URL]"}];
+
+const EDU = {
+    degree: "Information Technology",
+    uni: "Universitas Multimedia Nusantara",
+    status: "Currently in 5th Semester",
+    period: "August 2024 - August 2028"
+};
+
+const CERTS = [
+    {
+        name: "AWS Certified Cloud Practitioner",
+        org: "Amazon Web Services",
+        date: "August 14, 2026",
+        expiration: "August 14, 2029",
+        validationNumber: "4915059b114b4fdca2ced28dcd4259ab",
+        url: "https://aws.amazon.com/verification"
+    }
+];
+
 /* ======================================================== */
